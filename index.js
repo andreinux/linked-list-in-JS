@@ -47,6 +47,21 @@ class linkedlist {
             return this.head.value;
         }
     }
+
+
+    tailValue(){
+        let curr = this.head;
+
+        if(this.head === null){
+            return undefined;
+        }
+
+        while(curr.next !== null){
+            curr = curr.next;
+        }
+
+        return curr.value;
+    }
 }
 
 class Node {
@@ -59,8 +74,12 @@ class Node {
 
 let list = new linkedlist;
 
+list.append(10);
+list.append(20);
+list.append(30);
 
-console.log(list.headValue());
+
+console.log(list.tailValue());
 
 
 
