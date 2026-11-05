@@ -19,6 +19,14 @@ class linkedlist {
 
         curr.next = new Node(value);
     }
+
+
+    prepend(value){
+        let next = this.head;
+
+        this.head = new Node(value);
+        this.head.next = next;
+    }
 }
 
 class Node {
@@ -32,6 +40,7 @@ class Node {
 let list = new linkedlist;
 
 list.append(20);
+list.prepend(10);
 
 console.log(list);
 
