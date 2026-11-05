@@ -2,6 +2,23 @@ class linkedlist {
     constructor(){
         this.head = null;
     }
+
+
+    append(value){
+
+        let curr = this.head;
+
+        if(this.head === null){
+            this.head = new Node(value);
+            return;
+        }
+
+        while(curr.next !== null){
+            curr = curr.next;
+        }
+
+        curr.next = new Node(value);
+    }
 }
 
 class Node {
@@ -14,6 +31,8 @@ class Node {
 
 let list = new linkedlist;
 
-list.head = new Node(10);
+list.append(20);
 
 console.log(list);
+
+
