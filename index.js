@@ -39,6 +39,14 @@ class linkedlist {
 
         return count;
     }
+
+    headValue(){
+        if(this.head === null){
+            return undefined;
+        }else{
+            return this.head.value;
+        }
+    }
 }
 
 class Node {
@@ -51,10 +59,8 @@ class Node {
 
 let list = new linkedlist;
 
-list.append(20);
-list.prepend(10);
-list.prepend(5);
-console.log(list.size());
-console.log(list);
+
+console.log(list.headValue());
+
 
 
