@@ -27,6 +27,18 @@ class linkedlist {
         this.head = new Node(value);
         this.head.next = next;
     }
+
+    size(){
+        let curr = this.head;
+        let count = 0;
+
+        while(curr !== null){
+            count++;
+            curr = curr.next;
+        }
+
+        return count;
+    }
 }
 
 class Node {
@@ -41,7 +53,8 @@ let list = new linkedlist;
 
 list.append(20);
 list.prepend(10);
-
+list.prepend(5);
+console.log(list.size());
 console.log(list);
 
 
