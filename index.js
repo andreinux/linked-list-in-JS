@@ -81,6 +81,19 @@ class linkedlist {
 
         return curr.value;
     }
+
+    pop(){
+         let listhead = this.head;
+
+         if(this.head == null){
+            return undefined;
+         }
+
+         let nextnode = this.head.next;
+         this.head = nextnode;
+
+         return listhead.value;
+    }
 }
 
 class Node {
@@ -93,9 +106,11 @@ class Node {
 
 let list = new linkedlist;
 
+list.append(10);
+list.append(20);
+list.pop();
+console.log(list.headValue());
 
-
-console.log(list.at(4));
 
 
 
