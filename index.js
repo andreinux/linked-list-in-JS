@@ -189,6 +189,31 @@ class linkedlist {
         lastnode.next = nextnode;
 
     }
+removeAt(index){
+    let currindex = 0;
+    let curr = this.head;
+
+    let listSize = this.size();
+
+    if(index < 0 || index >= listSize){
+        throw new RangeError("Index out of range");
+        return;
+    }
+
+    if (index === 0) {
+        this.head = this.head.next;
+        return;
+    }   
+
+    while(currindex < index - 1){
+        curr = curr.next;
+        currindex += 1;
+    }
+
+    curr.next = curr.next.next;
+    
+}
+
 }
 
 class Node {
@@ -205,7 +230,7 @@ let list = new linkedlist;
 list.append(10);
 list.append(20);
 list.append(30);
-list.insertAt(1, 10, 11);
+list.removeAt(2);
 console.log(list.toString());
 
 
