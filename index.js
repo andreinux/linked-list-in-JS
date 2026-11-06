@@ -126,6 +126,25 @@ class linkedlist {
 
         return -1;
     }
+
+    toString(){
+        let curr = this.head;
+        let result = "";
+
+        if(this.head == null){
+            return "";
+        }
+
+
+        while(curr !== null){
+            result += (`(${curr.value}) -> `);
+            curr = curr.next;
+        }
+
+        result+= "null";
+
+        return result;
+    }
 }
 
 class Node {
@@ -135,12 +154,12 @@ class Node {
     }
 }
 
+//( 10 ) -> ( 20 ) -> ( 30 ) -> null
 
 let list = new linkedlist;
-list.append(10);
-list.append(50);
-list.append(30);
-console.log(list.findIndex(30));
+
+console.log(list.toString());
+
 
 
 
