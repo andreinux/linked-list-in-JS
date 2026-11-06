@@ -62,6 +62,25 @@ class linkedlist {
 
         return curr.value;
     }
+
+    at(index){
+        let curr = this.head;
+        let currindex = 0;
+
+        if(this.head ===  null){
+            return undefined;
+        }
+
+        while(currindex !== index){
+            if(curr.next === null){
+                return undefined;
+            }
+            curr = curr.next;
+            currindex = currindex + 1;
+        }
+
+        return curr.value;
+    }
 }
 
 class Node {
@@ -74,12 +93,9 @@ class Node {
 
 let list = new linkedlist;
 
-list.append(10);
-list.append(20);
-list.append(30);
 
 
-console.log(list.tailValue());
+console.log(list.at(4));
 
 
 
