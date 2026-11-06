@@ -145,6 +145,50 @@ class linkedlist {
 
         return result;
     }
+
+    insertAt(index,...values){
+        let curr = this.head;
+        let position = 0;
+
+          if (values.length === 0) return;
+
+    if (index < 0 || index > this.size()) {
+        return;
+    }
+
+
+    
+
+        while(position<index - 1){
+            curr = curr.next;
+            position++;
+        }
+        
+        let nextnode = curr.next;
+        let prevnode = curr;
+
+        let firstnode = null;
+        let lastnode = null;
+
+        //values = []
+
+        for(let element of values){
+            let newnode = new Node(element);
+
+            if(firstnode === null){
+                firstnode = newnode;
+            }else{
+                lastnode.next = newnode;
+            }
+
+            lastnode = newnode;
+        }
+        
+        
+        prevnode.next = firstnode;
+        lastnode.next = nextnode;
+
+    }
 }
 
 class Node {
@@ -154,10 +198,14 @@ class Node {
     }
 }
 
-//( 10 ) -> ( 20 ) -> ( 30 ) -> null
+
 
 let list = new linkedlist;
 
+list.append(10);
+list.append(20);
+list.append(30);
+list.insertAt(1, 10, 11);
 console.log(list.toString());
 
 
