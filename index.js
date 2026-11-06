@@ -94,6 +94,38 @@ class linkedlist {
 
          return listhead.value;
     }
+
+    contains(value){
+        let curr = this.head;
+
+        while(curr !== null){
+            if(curr.value === value){
+                return true;
+            }
+            curr = curr.next;
+        }
+
+        return false;
+    }
+
+    findIndex(value){
+        let index = 0;
+        let curr = this.head;
+
+        if(this.head == null){
+            return -1;
+        }
+
+        while(curr !== null){
+            if(curr.value === value){
+                return index;
+            }
+            curr = curr.next;
+            index = index + 1;
+        }
+
+        return -1;
+    }
 }
 
 class Node {
@@ -105,11 +137,10 @@ class Node {
 
 
 let list = new linkedlist;
-
 list.append(10);
-list.append(20);
-list.pop();
-console.log(list.headValue());
+list.append(50);
+list.append(30);
+console.log(list.findIndex(30));
 
 
 
